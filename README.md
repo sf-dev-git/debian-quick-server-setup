@@ -42,6 +42,7 @@ usermod -aG sshusers %USER%
 - copy paste pubkey `nano /home/%USER%/.ssh/authorized_keys` 
 - edit sshd_config file 
 	- `AuthorizedKeysFile      /home/%USER%/.ssh/authorized_keys`
+ 	- `PermitRootLogin no`
 	- `AllowGroups sshusers`
 	- `ClientAliveCountMax 0`
 	- `ClientAliveInterval 300`
@@ -54,7 +55,7 @@ usermod -aG sshusers %USER%
 if ssh key login error occurs 
 - `chmod 700 ~/.ssh`
 - `chmod 600 ~/.ssh/authorized_keys`
-- `chown $USER:$USER ~/.ssh -R
+- `chown $USER:$USER ~/.ssh -R`
 - `sudo service ssh restart`
 
 if ur still able to login with password despite the changes in `sshd_conf`
