@@ -92,6 +92,11 @@ APT::Periodic::Unattended-Upgrade "1";
 - `sudo ufw enable`
 - `sudo ufw status`
 
+## Disable ping response (ICMP echo)
+
+- `sudo nano /etc/ufw/sysctl.conf` set following to 1 `net/ipv4/icmp_echo_ignore_all=1`
+- `sudo service ufw restart`
+
 ## Fail2ban
 
 - `sudo apt install fail2ban`
